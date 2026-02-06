@@ -19,14 +19,15 @@ Damit können in Echtzeit Effekte wie **Überschwingen, Einschwingzeit, Genauigk
 ---
 
 ##  Mein Beitrag: PCB-Design  
-Mein Fokus lag auf der **Entwicklung und Umsetzung der Leiterplatte**. Diese integriert die zentralen Hardware-Komponenten:  
+Mein Fokus lag auf der **Entwicklung und Umsetzung der Leiterplatte** sowie ein kleiner zusätzlicher Beitrag zur Bestimmung der PID-Parametrisierung mithilfe des MATLAB PID-Tuners. Diese integriert die zentralen Hardware-Komponenten:  
 
 - **Powerbank-Interface** mit Spannungsregelung (12 V, 6 V, 5 V, 3.3 V)  
 - **Motorstrom-Messung** über Shunt und INA138  
 - **Treiberstufe** mit DRV8848 H-Brücke für Motorsteuerung  
 - **Anschlüsse für Potentiometer** zur PID-Parametereinstellung  
 - **Header für LCD-Display** und serielle Schnittstellen  
-- **Anschluss des STM32F4-Discovery Boards** als Recheneinheit  
+- **Anschluss des STM32F4-Discovery Boards** als Recheneinheit
+- **PID-Parametrierung** mithilfe des MATLAB PID-Tuners
 
 ---
 
