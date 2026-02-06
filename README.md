@@ -1,4 +1,4 @@
-# PID-Demonstrator – PCB Design  
+# PID-Demonstrator 
 
 Dieses Projekt entstand im Rahmen des Master-Studiengangs **Mechatronik und Robotik** (Frankfurt UAS, SoSe 2025) im Fach *Simulation und Regelung*. Ziel war die Entwicklung eines  **PID-Demonstrators**, mit dem die Wirkungsweise eines PID-Reglers anschaulich und praxisnah vermittelt werden kann.
 
