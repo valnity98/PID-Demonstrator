@@ -102,3 +102,11 @@ The PID parameters were initially estimated using the **MATLAB PID Tuner** on an
 
 - Mutasem Bader — PCB design, PID parameter tuning
 - *Team members — STM32 firmware, system integration*
+
+---
+
+## License
+
+Copyright (c) 2026 Mutasem Bader — All Rights Reserved.  
+Viewing is permitted. Copying, modifying, or submitting as own work is strictly prohibited.  
+See [LICENSE](LICENSE) for details.
