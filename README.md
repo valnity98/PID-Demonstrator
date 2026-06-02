@@ -1,46 +1,104 @@
-# PID-Demonstrator 
+# PID Demonstrator
 
-Dieses Projekt entstand im Rahmen des Master-Studiengangs **Mechatronik und Robotik** (Frankfurt UAS, SoSe 2025) im Fach *Simulation und Regelung*. Ziel war die Entwicklung eines  **PID-Demonstrators**, mit dem die Wirkungsweise eines PID-Reglers anschaulich und praxisnah vermittelt werden kann.
+**Hardware demonstrator for real-time PID control using an STM32F4 microcontroller**
 
----
-
-## Projektziel  
-Der Demonstrator zeigt das Verhalten eines geschlossenen Regelkreises bestehend aus:  
-
-- **Aktor:** DC-Motor zur Ausgabe einer mechanischen Größe (z. B. Winkelposition)  
-- **Sensor:** Rückführung über Potentiometer oder Encoder  
-- **Regler-Hardware:** STM32-Mikrocontroller führt die PID-Regelung in Echtzeit aus  
-- **Benutzerschnittstelle:** Potentiometer zur Einstellung von Kp, Ki, Kd sowie zur Sollwertvorgabe  
-- **Visualisierung:** Ausgabe der Regelgrößen über serielle Schnittstelle und LCD  
-- **Energieversorgung:** Akkubetrieb über Powerbank, mobiler Einsatz möglich  
-
-Damit können in Echtzeit Effekte wie **Überschwingen, Einschwingzeit, Genauigkeit und Regelabweichung** beobachtet werden.  
+Developed as part of the Master's course *Simulation and Control* (Mechatronics & Robotics, Frankfurt UAS, SoSe 2025). The demonstrator makes the dynamic behaviour of a closed-loop PID controller physically observable in real time — including overshoot, settling time, steady-state error, and the effect of individual gain tuning.
 
 ---
 
-##  Mein Beitrag: PCB-Design  
-Mein Fokus lag auf der **Entwicklung und Umsetzung der Leiterplatte** sowie ein kleiner zusätzlicher Beitrag zur Bestimmung der PID-Parametrisierung mithilfe des MATLAB PID-Tuners. Diese integriert die zentralen Hardware-Komponenten:  
+## System Overview
 
-- **Powerbank-Interface** mit Spannungsregelung (12 V, 6 V, 5 V, 3.3 V)  
-- **Motorstrom-Messung** über Shunt und INA138  
-- **Treiberstufe** mit DRV8848 H-Brücke für Motorsteuerung  
-- **Anschlüsse für Potentiometer** zur PID-Parametereinstellung  
-- **Header für LCD-Display** und serielle Schnittstellen  
-- **Anschluss des STM32F4-Discovery Boards** als Recheneinheit
-- **PID-Parametrierung** mithilfe des MATLAB PID-Tuners
+```
+┌────────────────────────────────────────────────────┐
+│                  PID Demonstrator                  │
+│                                                    │
+│  Setpoint ──► [PID Controller] ──► [DC Motor]      │
+│  (Pot)        STM32F4-Discovery    + H-Bridge      │
+│                     ▲                   │           │
+│                     └─── [Sensor] ◄─────┘           │
+│                          (Pot / Encoder)            │
+│                                                    │
+│  LCD display  ←  angle / speed / error             │
+│  Serial port  ←  live data for plotting            │
+└────────────────────────────────────────────────────┘
+```
+
+### Closed-Loop Components
+
+| Block | Implementation |
+|---|---|
+| **Actuator** | DC motor — outputs mechanical angle or speed |
+| **Sensor** | Potentiometer (position) or encoder (velocity) |
+| **Controller** | STM32F4-Discovery running discrete-time PID in real time |
+| **Setpoint input** | Potentiometer (manual) |
+| **Gain adjustment** | Three dedicated potentiometers for Kp, Ki, Kd |
+| **Visualisation** | LCD display + serial output (UART → PC plotter) |
+| **Power supply** | Powerbank — fully portable operation |
 
 ---
 
-### PCB Layout  
-Top-Layer:  
-![PCB Top](PID-Demo%20v92_T.png)  
+## My Contribution: PCB Design
 
-Bottom-Layer:  
-![PCB Bottom](PID-Demo%20v92_B.png)  
+My primary contribution was the **design and layout of the custom PCB** that integrates all hardware components on a single board, plus a secondary contribution to **PID parameter tuning using the MATLAB PID Tuner**.
 
-### Schaltplan  
-![Schaltplan](Schaltplan-Demo.png)  
+### PCB Features
 
+| Block | Components |
+|---|---|
+| Power management | Powerbank interface, LDO regulators: 12 V, 6 V, 5 V, 3.3 V |
+| Motor current sensing | Shunt resistor + INA138 current monitor |
+| Motor driver | DRV8848 dual H-bridge |
+| Gain potentiometers | Three 10 kΩ trimmers for Kp, Ki, Kd |
+| Setpoint potentiometer | One 10 kΩ trimmer |
+| LCD interface | 4-bit parallel header |
+| MCU interface | Pin header for STM32F4-Discovery board |
+| Serial output | UART header for live data streaming |
 
-## Quellen  
-- Beispielaufbau: [YouTube-Link](https://youtu.be/qKy98Cbcltw?si=HwGLJR-9h6Nvn7Rk)  
+### PCB Layout
+
+| Layer | Image |
+|---|---|
+| Top | ![Top layer](PID-Demo%20v92_T.png) |
+| Bottom | ![Bottom layer](PID-Demo%20v92_B.png) |
+
+### Schematic
+
+![Schematic](Schaltplan-Demo.png)
+
+### 3D Model
+
+See [`PID-Demo v96.f3z`](PID-Demo%20v96.f3z) (Fusion 360 archive).
+
+---
+
+## PID Tuning
+
+The PID parameters were initially estimated using the **MATLAB PID Tuner** on an identified plant model (step-response identification of the DC motor + load). The resulting gains were then verified and fine-adjusted on the physical hardware by observing the step response on the serial plotter.
+
+---
+
+## Observable Control Effects
+
+| Effect | How to observe |
+|---|---|
+| Overshoot | Increase Kp — system overshoots setpoint |
+| Oscillation | Increase Kd too far — derivative noise amplified |
+| Integral windup | Set large reference step, observe slow wind-down |
+| Steady-state error | Set Ki = 0 — residual offset remains |
+| Settling time | Compare responses with/without derivative term |
+
+---
+
+## References
+
+- Example build inspiration: [YouTube — PID Motor Control Demonstration](https://youtu.be/qKy98Cbcltw?si=HwGLJR-9h6Nvn7Rk)
+- MATLAB PID Tuner documentation: [mathworks.com/help/control/ref/pidtuner-app.html](https://www.mathworks.com/help/control/ref/pidtuner-app.html)
+- DRV8848 datasheet: Texas Instruments SLVSCK4
+- INA138 datasheet: Texas Instruments SBOS165
+
+---
+
+## Contributors
+
+- Mutasem Bader — PCB design, PID parameter tuning
+- *Team members — STM32 firmware, system integration*
