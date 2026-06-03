@@ -1,5 +1,8 @@
 # PID Demonstrator
 
+> ⚠️ **Work in Progress** — This project is currently under active development.
+> Some features are incomplete and known bugs are present. Use with caution.
+
 **Hardware demonstrator for real-time PID control using an STM32F4 microcontroller**
 
 Developed as part of the Master's course *Simulation and Control* (Mechatronics & Robotics, Frankfurt UAS, SoSe 2025). The demonstrator makes the dynamic behaviour of a closed-loop PID controller physically observable in real time — including overshoot, settling time, steady-state error, and the effect of individual gain tuning.
