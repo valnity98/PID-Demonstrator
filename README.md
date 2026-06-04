@@ -40,15 +40,15 @@ Developed as part of the Master's course *Simulation and Control* (Mechatronics 
 
 ---
 
-## My Contribution: PCB Design
+## PCB Design
 
-My primary contribution was the **design and layout of the custom PCB** that integrates all hardware components on a single board, plus a secondary contribution to **PID parameter tuning using the MATLAB PID Tuner**.
+**Design and layout of the custom PCB** that integrates all hardware components on a single board.
 
 ### PCB Features
 
 | Block | Components |
 |---|---|
-| Power management | Powerbank interface, LDO regulators: 12 V, 6 V, 5 V, 3.3 V |
+| Power management | Powerbank interface, LDO regulators: 12 V, 6.5 V, 5.8 V, 5.1 V |
 | Motor current sensing | Shunt resistor + INA138 current monitor |
 | Motor driver | DRV8848 dual H-bridge |
 | Gain potentiometers | Three 10 kΩ trimmers for Kp, Ki, Kd |
@@ -104,8 +104,6 @@ The PID parameters were initially estimated using the **MATLAB PID Tuner** on an
 ## Contributors
 
 - Mutasem Bader — PCB design, PID parameter tuning
-- *Team members — STM32 firmware, system integration*
-
 ---
 
 ## License
