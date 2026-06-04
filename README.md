@@ -61,8 +61,8 @@ My primary contribution was the **design and layout of the custom PCB** that int
 
 | Layer | Image |
 |---|---|
-| Top | ![Top layer](PID-Demo%20v92_T.png) |
-| Bottom | ![Bottom layer](PID-Demo%20v92_B.png) |
+| Top | ![Top layer](PID-Demo%20v103_T.png) |
+| Bottom | ![Bottom layer](PID-Demo%20v103_B.png) |
 
 ### Schematic
 
@@ -70,7 +70,7 @@ My primary contribution was the **design and layout of the custom PCB** that int
 
 ### 3D Model
 
-See [`PID-Demo v96.f3z`](PID-Demo%20v96.f3z) (Fusion 360 archive).
+See [`PID-Demo v103.f3z`](PID-Demo%20v103.f3z) (Fusion 360 archive).
 
 ---
 
