@@ -8,6 +8,27 @@ Developed as part of the Master's course *Simulation and Control* (Mechatronics 
 
 ---
 
+## System Architecture
+
+```
+┌────────────────────────────────────────────────────┐
+│                  PID Demonstrator                  │
+│                                                    │
+│  Setpoint ──► [PID Controller] ──► [DC Motor]      │
+│  (Pot)        STM32F4-Discovery    + H-Bridge      │
+│                     ▲                   │          │
+│                     └─── [Sensor] ◄─────┘          │
+│                          (Pot / Encoder)           │
+│                                                    │
+│  LCD display  ←  angle / speed / error             │
+│  Serial port  ←  live data for plotting            │
+└────────────────────────────────────────────────────┘
+```
+
+Reference build: [YouTube — PID Motor Control Demonstration](https://youtu.be/qKy98Cbcltw?si=HwGLJR-9h6Nvn7Rk)
+
+---
+
 ## PCB Design
 
 Design and layout of the custom PCB that integrates all hardware components on a single board.
