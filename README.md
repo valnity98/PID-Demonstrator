@@ -1,4 +1,4 @@
-# PID Demonstrator
+# PID Demonstrator (Only PCB)
 
 > ⚠️ **This project is no longer maintained.** The repository is archived for reference only.
 
