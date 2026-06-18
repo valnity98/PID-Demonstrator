@@ -8,6 +8,14 @@ Developed as part of the Master's course *Simulation and Control* (Mechatronics 
 
 ---
 
+## Project Status
+
+The **first PCB version** was fully assembled, tested, and successfully operated in the demonstrator setup. During testing, several hardware errors were identified on the board.
+
+A **revised PCB version** was designed to fix these errors — however, this version was **never manufactured or tested**. The project was concluded at this point and is considered complete as a course deliverable.
+
+---
+
 ## System Architecture
 
 ```
