@@ -58,16 +58,16 @@ Design and layout of the custom PCB that integrates all hardware components on a
 
 | Layer | Image |
 |---|---|
-| Top | ![Top layer](PID-Demo%20v103_T.png) |
-| Bottom | ![Bottom layer](PID-Demo%20v103_B.png) |
+| Top | ![Top layer](pcb-top.png) |
+| Bottom | ![Bottom layer](pcb-bottom.png) |
 
 ### Schematic
 
-![Schematic](Schaltplan-Demo.png)
+![Schematic](schematic.png)
 
-### 3D Model
+### PCB Design File
 
-See [`PID-Demo v103.f3z`](PID-Demo%20v103.f3z) (Fusion 360 archive).
+See [`pcb-design.fbrd`](pcb-design.fbrd) (EAGLE board file).
 
 ---
 
