@@ -58,6 +58,8 @@ Design and layout of the custom PCB that integrates all hardware components on a
 
 ### PCB Layout
 
+The layout shown below is the **revised version (v2)**, which was designed but never manufactured. Its silkscreen reads "V.03" by mistake; it is not a third revision.
+
 | Layer | Image |
 |---|---|
 | Top | ![Top layer](pcb-top.png) |
