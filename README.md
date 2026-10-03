@@ -1,10 +1,12 @@
 # PID Demonstrator (Only PCB)
 
-> ⚠️ **This project is no longer maintained.** The repository is archived for reference only.
+> **Status: completed.** University project (SoSe 2025): PCB v1 built and tested, v2 designed (see Project Status).
 
 **Custom PCB for a real-time PID control demonstrator based on the STM32F4 microcontroller.**
 
 Developed as part of the Master's course *Simulation and Control* (Mechatronics & Robotics, Frankfurt UAS, SoSe 2025).
+
+**Team project.** My part: hardware concept, schematic and two-layer PCB design, power supply (USB-C Power Delivery) and integration of the STM32F4. I supported the PID tuning with the MATLAB PID Tuner.
 
 ---
 
