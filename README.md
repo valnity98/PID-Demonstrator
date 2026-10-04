@@ -30,12 +30,12 @@ A **revised PCB version** was designed to fix these errors — however, this ver
 │                     └─── [Sensor] ◄─────┘          │
 │                          (Pot / Encoder)           │
 │                                                    │
-│  LCD display  ←  angle / speed / error             │
+│  Display      ←  angle / speed / error             │
 │  Serial port  ←  live data for plotting            │
 └────────────────────────────────────────────────────┘
 ```
 
-Reference build: [YouTube — PID Motor Control Demonstration](https://youtu.be/qKy98Cbcltw?si=HwGLJR-9h6Nvn7Rk)
+Third-party reference video (not my work): ["PID demo" by Voltix Electronics Lab on YouTube](https://youtu.be/qKy98Cbcltw)
 
 ---
 
@@ -47,12 +47,12 @@ Design and layout of the custom PCB that integrates all hardware components on a
 
 | Block | Components |
 |---|---|
-| Power management | Powerbank interface, LDO regulators: 12 V, 6.5 V, 5.8 V, 5.1 V |
+| Power management | USB-C Power Delivery sink (CH224K) for 12 V from a power bank, DC/DC module TSR 3-2465N for 6.5 V, diode drops for 5.8 V and 5.1 V; 3.3 V is supplied by the STM32F4-Discovery board |
 | Motor current sensing | Shunt resistor + INA138 current monitor |
 | Motor driver | DRV8848 dual H-bridge |
-| Gain potentiometers | Three 10 kΩ trimmers for Kp, Ki, Kd |
-| Setpoint potentiometer | One 10 kΩ trimmer |
-| LCD interface | 4-bit parallel header |
+| Gain potentiometers | Three 10 kΩ rotary potentiometers for Kp, Ki, Kd |
+| Setpoint potentiometer | One 10 kΩ rotary potentiometer |
+| Display interface | SPI header for a 128×160 ST7735 TFT display |
 | MCU interface | Pin header for STM32F4-Discovery board |
 | Serial output | UART header for live data streaming |
 
@@ -71,14 +71,14 @@ The layout shown below is the **revised version (v2)**, which was designed but n
 
 ### PCB Design File
 
-See [`pcb-design.fbrd`](pcb-design.fbrd) (EAGLE board file).
+See [`pcb-design.fbrd`](pcb-design.fbrd) (Fusion 360 Electronics board file; it contains EAGLE board data).
 
 ---
 
 ## References
 
-- DRV8848 datasheet: Texas Instruments SLVSCK4
-- INA138 datasheet: Texas Instruments SBOS165
+- [DRV8848 datasheet](https://www.ti.com/lit/ds/symlink/drv8848.pdf) (Texas Instruments)
+- [INA138 datasheet](https://www.ti.com/lit/ds/symlink/ina138.pdf) (Texas Instruments)
 
 ---
 
