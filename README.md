@@ -73,6 +73,10 @@ The layout shown below is the **revised version (v2)**, which was designed but n
 
 See [`pcb-design.fbrd`](pcb-design.fbrd) (Fusion 360 Electronics board file; it contains EAGLE board data).
 
+### Bill of Materials
+
+[`bill-of-materials.xlsx`](bill-of-materials.xlsx) lists the parts with supplier part numbers and prices (Reichelt/Mouser, as of 03.06.2026) and refers to schematic v65. The reference designators follow that schematic and can differ from the revised board file (for example `PS1` for the DC/DC module instead of `U2`).
+
 ---
 
 ## References
