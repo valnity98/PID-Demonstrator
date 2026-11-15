@@ -1,22 +1,14 @@
-# PID Demonstrator (Only PCB)
+# PID Demonstrator: PCB for an STM32F4 Control Loop
 
-> **Status: completed.** University project (SoSe 2025): PCB v1 built and tested, v2 designed (see Project Status).
+A custom PCB for a PID control demonstrator. An STM32F4-Discovery board controls a DC motor, and the gains Kp, Ki and Kd are set with potentiometers on the board. This repository contains the hardware only: schematic, layout and bill of materials.
 
-**Custom PCB for a real-time PID control demonstrator based on the STM32F4 microcontroller.**
+Team project in the master's course *Simulation and Control* at Frankfurt UAS (summer semester 2025). The project is finished.
 
-Developed as part of the Master's course *Simulation and Control* (Mechatronics & Robotics, Frankfurt UAS, SoSe 2025).
+My part was the hardware: concept, schematic, two-layer layout, the power supply with USB-C Power Delivery and the integration of the STM32F4 board. I also supported the PID tuning with the MATLAB PID Tuner.
 
-**Team project.** My part: hardware concept, schematic and two-layer PCB design, power supply (USB-C Power Delivery) and integration of the STM32F4. I supported the PID tuning with the MATLAB PID Tuner.
+## Project status
 
----
-
-## Project Status
-
-The **first PCB version** was fully assembled, tested, and successfully operated in the demonstrator setup. During testing, several hardware errors were identified on the board.
-
-A **revised PCB version** was designed to fix these errors — however, this version was **never manufactured or tested**. The project was concluded at this point and is considered complete as a course deliverable.
-
----
+The first board was assembled and tested, and it ran in the demonstrator setup. The tests showed several hardware errors, which I corrected in a second revision. That revision was designed but not manufactured, because the project ended at that point.
 
 ## System Architecture
 
@@ -36,8 +28,6 @@ A **revised PCB version** was designed to fix these errors — however, this ver
 ```
 
 Third-party reference video (not my work): ["PID demo" by Voltix Electronics Lab on YouTube](https://youtu.be/qKy98Cbcltw)
-
----
 
 ## PCB Design
 
@@ -77,17 +67,13 @@ See [`pcb-design.fbrd`](pcb-design.fbrd) (Fusion 360 Electronics board file; it 
 
 [`bill-of-materials.xlsx`](bill-of-materials.xlsx) lists the parts with supplier part numbers and prices (Reichelt/Mouser, as of 03.06.2026) and refers to schematic v65. The reference designators follow that schematic and can differ from the revised board file (for example `PS1` for the DC/DC module instead of `U2`).
 
----
-
 ## References
 
 - [DRV8848 datasheet](https://www.ti.com/lit/ds/symlink/drv8848.pdf) (Texas Instruments)
 - [INA138 datasheet](https://www.ti.com/lit/ds/symlink/ina138.pdf) (Texas Instruments)
 
----
-
 ## License
 
-Copyright (c) 2026 Mutasem Bader — All Rights Reserved.  
+Copyright (c) 2026 Mutasem Bader. All rights reserved.  
 Viewing is permitted. Copying, modifying, or submitting as own work is strictly prohibited.  
 See [LICENSE](LICENSE) for details.
