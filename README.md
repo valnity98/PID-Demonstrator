@@ -37,7 +37,9 @@ Design and layout of the custom PCB that integrates all hardware components on a
 
 | Block | Components |
 |---|---|
+| Board | Two-layer PCB, 180.34 × 106.68 mm (7.1 × 4.2 in), 1.57 mm thick |
 | Power management | USB-C Power Delivery sink (CH224K) for 12 V from a power bank, DC/DC module TSR 3-2465N for 6.5 V, diode drops for 5.8 V and 5.1 V; 3.3 V is supplied by the STM32F4-Discovery board |
+| Motor supply selection | Jumper JP1 selects 12 V, 6.5 V, 5.8 V or 5.1 V for the motor driver, protected by a resettable fuse |
 | Motor current sensing | Shunt resistor + INA138 current monitor |
 | Motor driver | DRV8848 dual H-bridge |
 | Gain potentiometers | Three 10 kΩ rotary potentiometers for Kp, Ki, Kd |
@@ -48,7 +50,7 @@ Design and layout of the custom PCB that integrates all hardware components on a
 
 ### PCB Layout
 
-The layout shown below is the **revised version (v2)**, which was designed but never manufactured. Its silkscreen reads "V.03" by mistake; it is not a third revision.
+The layout shown below is the **revised version (v2)**, which was designed but never manufactured. Its silkscreen reads "V.02".
 
 | Layer | Image |
 |---|---|
@@ -59,13 +61,16 @@ The layout shown below is the **revised version (v2)**, which was designed but n
 
 ![Schematic](schematic.png)
 
-### PCB Design File
+### Design Files
 
-See [`pcb-design.fbrd`](pcb-design.fbrd) (Fusion 360 Electronics board file; it contains EAGLE board data).
+- [`pcb-design.fbrd`](pcb-design.fbrd): board file
+- [`schematic.fsch`](schematic.fsch): schematic file
+
+Both are Fusion 360 Electronics files that contain EAGLE data.
 
 ### Bill of Materials
 
-[`bill-of-materials.xlsx`](bill-of-materials.xlsx) lists the parts with supplier part numbers and prices (Reichelt/Mouser, as of 03.06.2026) and refers to schematic v65. The reference designators follow that schematic and can differ from the revised board file (for example `PS1` for the DC/DC module instead of `U2`).
+[`bill-of-materials.xlsx`](bill-of-materials.xlsx) lists the parts with supplier part numbers, quantities and prices (mostly Reichelt, as of 16.11.2026). The reference designators match the schematic and the board file.
 
 ## References
 
