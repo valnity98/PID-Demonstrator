@@ -37,7 +37,7 @@ Schematic:
 ## Files
 
 - [`pcb-design.fbrd`](pcb-design.fbrd): Fusion 360 Electronics board file (it contains EAGLE board data)
-- [`bill-of-materials.xlsx`](bill-of-materials.xlsx): parts with supplier part numbers and prices (Reichelt/Mouser, as of 03.06.2026). It refers to schematic v65, so some reference designators differ from the revised board file (for example `PS1` for the DC/DC module instead of `U2`).
+- [`bill-of-materials.xlsx`](bill-of-materials.xlsx): parts with supplier part numbers and prices (Reichelt/Mouser, as of 03.06.2026). It refers to schematic v65, so some reference designators differ from the revised board file.
 
 Datasheets: [DRV8848](https://www.ti.com/lit/ds/symlink/drv8848.pdf), [INA138](https://www.ti.com/lit/ds/symlink/ina138.pdf) (Texas Instruments)
 
