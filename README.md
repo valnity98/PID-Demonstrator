@@ -24,7 +24,7 @@ Third-party reference video (not my work): ["PID demo" by Voltix Electronics Lab
 
 ## Layout
 
-The layout below is the revised version (v2), which was designed but never manufactured. Its silkscreen reads "V.03" by mistake; it is not a third revision.
+The layout below is the revised version (v2), which was designed but never manufactured.
 
 | Top | Bottom |
 |---|---|
