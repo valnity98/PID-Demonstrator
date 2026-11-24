@@ -1,0 +1,16 @@
+# EAGLE CAD backups
+*.bak
+*.b#*
+*.s#*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# local backups of the repository (kept on this machine only)
+*.bundle
+_backup*/
